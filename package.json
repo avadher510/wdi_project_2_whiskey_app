@@ -9,9 +9,9 @@
     "seed": "node db/seeds"
   },
   "engines": {
-    "node": "8.x.x"
+    "node": "9.2.0"
   },
-  "author": "Mike Hayden <mickyginger@gmail.com> (https://github.com/mickyginger)",
+  "author": "Anish Vadher <avadher510@gmail.com> (https://github.com/avadher510)",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.7",

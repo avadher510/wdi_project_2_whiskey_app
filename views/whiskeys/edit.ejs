@@ -1,0 +1,37 @@
+<form method="POST" action="/whiskeys/<%= whiskey.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <div class="form-group">
+    <label for="image">URL of Image</label>
+    <input type="text" class="form-control" id="image" name="image" value="<%=whiskey.image %>">
+  </div>
+  <div class="form-group">
+    <label for="origin">Origin</label>
+    <input type="text" class="form-control" id="origin" name="origin" value="<%= whiskey.origin %>">
+  </div>
+  <div class="form-group">
+    <label for="type">Type of Whiskey</label>
+    <input type="text" class="form-control" id="type" name="type" value="<%= whiskey.type %>">
+  </div>
+  <div class="form-group">
+    <label for="brand">Brand of Whiskey</label>
+    <input type="text" name="brand" class="form-control" id="brand" value="<%= whiskey.brand %>"
+  </div>
+  <div class="form-group">
+    <label for="variant">Variant of Whiskey</label>
+    <input type="text" class="form-control" id="variant" name="variant" value="<%= whiskey.variant %>">
+  </div>
+  <div class="form-group">
+    <label for="age">Age of Whiskey</label>
+    <input type="number" class="form-control" id="age" name="age" value="<%= whiskey.age %>">
+  </div>
+  <div class="form-group">
+    <label for="abv">Percentage Alcohol</label>
+    <input type="number" class="form-control" id="abv" name="abv" value="<%= whiskey.abv %>">
+  </div>
+  <div class="form-group">
+    <label for="price">Price per Bottle</label>
+    <input type="number" class="form-control" id="price" name="price" value="<%= whiskey.price %>">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

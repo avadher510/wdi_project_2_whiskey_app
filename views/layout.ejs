@@ -13,63 +13,69 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">LuvWhiskey</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <a class="navbar-brand" href="/">LuvWhiskey</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/whiskeys" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Whiskeys
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/whiskeys">All Whiskeys</a>
+            <a class="dropdown-item" href="/whiskeys?type=Single%20Malt%20Scotch%20Whiskey">Single Malt Scotch</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/whiskeys?origin=America">American Whiskeys</a>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/whiskeys?brand=Glenmorangie">Recommended</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/whiskeys" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Whiskeys
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/whiskeys">All Whiskeys</a>
-              <a class="dropdown-item" href="/whiskeys?type=Single%20Malt%20Scotch%20Whiskey">Single Malt Scotch</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/whiskeys?origin=America">American Whiskeys</a>
-            </div>
-            <li class="nav-item">
-              <a class="nav-link" href="/whiskeys?brand=Glenmorangie">Recommended</a>
-            </li>
-          </li>
+        </li>
 
-          <% if (locals.isLoggedIn) { %>
+        <% if (locals.isLoggedIn) { %>
           <li class="nav-item">
             <a class="nav-link" href="/whiskeys/new">Add Whiskey</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
+            <a class="nav-link" href="/logout">Logout</a>
           </li>
           <% }else{ %>
-          <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/register">Register</a>
-          </li>
+            </li>
+            <% } %>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">The home of Whiskey</h1>
+          <p class="lead">LuvWhiskey is a user based Whiskey app to help you find your ideal Whiskey!</p>
+        </div>
+        <div class="overlay">
+        </div>
+      </div>
+
+      <main class="container">
+        <% for (const type in messages) { %>
+          <p class="alert alert-<%= type %>"><%= messages[type] %></p>
           <% } %>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">The home of Whiskey</h1>
-        <p class="lead">LuvWhiskey is a user based Whiskey app to help you find your ideal Whiskey!</p>
-      </div>
-      <div class="overlay">
-      </div>
-    </div>
-
-  <%- body %>
-</body>
-</html>
+          <%- body %>
+        </main>
+      </body>
+      </html>

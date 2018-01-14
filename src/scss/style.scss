@@ -1,4 +1,31 @@
-// import scss partials here
+@import "variables";
+
 body {
   font-family: 'Helvetica', sans-serif;
+}
+
+.btl-img {
+  width: 200px;
+  height: 200px;
+}
+
+.jumbotron {
+  background-image: url('../assets/whiskeywall.jpg');
+  background-position: center;
+  background-size: cover;
+  color: $head-color;
+}
+
+.container {
+  .row {
+    h4 {
+      a {
+        color: #707070;
+        text-decoration: none;
+        &:hover {
+          color: #D98302;
+        }
+      }
+    }
+  }
 }

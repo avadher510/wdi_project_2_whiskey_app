@@ -19,4 +19,4 @@ if(env === 'development') app.use(morgan('dev'));
 
 app.use(routes);
 
-app.listen(port, () => console.log(`Express is listening on port ${port}`));
+app.listen(port, () => console.log(`Express is now listening on port ${port}`));

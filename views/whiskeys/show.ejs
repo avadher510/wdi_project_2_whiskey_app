@@ -1,0 +1,15 @@
+<h1><%= whiskey.brand %></h1>
+<h2><%= whiskey.variant %></h2>
+<h3><%= whiskey.type %></h3>
+<img src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>" class="btl-img">
+<p>This Whiskey originates from <%= whiskey.origin %> and the flavours you will experience are <%= whiskey.notes %></p>
+<p>Age: <%= whiskey.age %> years old</p>
+<p>ABV: <%= whiskey.abv %>%</p>
+<p>Price: £<%= whiskey.price %></p>
+
+<a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a>
+
+<form action="/whiskeys/<%= whiskey.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <button>Delete</button>
+</form>

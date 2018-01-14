@@ -2,7 +2,7 @@
   <div class="row">
     <% whiskeys.forEach((whiskey) => { %>
       <div class='col-lg col-sm-6'>
-      <h4><a href='#'><%= whiskey.brand %> <%= whiskey.variant %></a></h4>
+      <h4><a href='/whiskeys/<%= whiskey.id %>'><%= whiskey.brand %> <%= whiskey.variant %></a></h4>
       <h5><% whiskey.type %></h5>
       <img src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>" class="btl-img">
       </div>

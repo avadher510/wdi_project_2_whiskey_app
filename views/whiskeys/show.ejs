@@ -9,11 +9,11 @@
 <p>Created By: <%= whiskey.createdBy.username %></p>
 
 <% if (locals.isLoggedIn) { %>
-<a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a>
+<button type="submit" value="Edit" class="btn btn-primary edit-btn"><a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a></button>
 
-<form action="/whiskeys/<%= whiskey.id %>" method="POST">
+<form action="/whiskeys/<%= whiskey.id %>" method="POST" class="delete-btn">
   <input type="hidden" name="_method" value="DELETE">
-  <button>Delete</button>
+  <button type="submit" value="Delete" class="btn btn-primary">Delete</button>
 </form>
 <% } else { %>
 
@@ -34,11 +34,11 @@
 <% }) %>
 
 <% if(locals.isLoggedIn) { %>
-<section>
+<section class="comment-form">
   <h4>Leave a comment</h4>
   <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments">
     <textarea name="content" id="content" placeholder="Comment"></textarea>
-    <button class="button">Leave a comment</button>
+    <button type="submit" class="btn btn-primary">Leave a comment</button>
     <% } else { %>
       <p><a href="/register">Register</a> or <a href="/login">Login to comment</a></p>
     <% } %>

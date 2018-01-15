@@ -31,7 +31,7 @@ router.route('/logout')
 //Index and Create
 router.route('/whiskeys')
   .get(whiskeys.index)
-  .post(whiskeys.create);
+  .post(secureRoute, whiskeys.create);
 
 //New
 router.route('/whiskeys/new')
@@ -40,8 +40,8 @@ router.route('/whiskeys/new')
 //Show, Update and Delete
 router.route('/whiskeys/:id')
   .get(whiskeys.show)
-  .put(whiskeys.update)
-  .delete(whiskeys.delete);
+  .put(secureRoute, whiskeys.update)
+  .delete(secureRoute, whiskeys.delete);
 
 //Edit
 router.route('/whiskeys/:id/edit')

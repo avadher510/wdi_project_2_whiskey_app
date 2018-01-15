@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const routes         = require('./config/routes');
 const mongoose       = require('mongoose');
 mongoose.Promise     = require('bluebird');
+const authentication = require('./lib/authentication');
 const session = require('express-session');
 const User = require('./models/user');
 const flash = require('express-flash');
@@ -58,6 +59,7 @@ app.use((req, res, next) => {
     });
 });
 
+app.use(authentication);
 app.use(routes);
 
 app.listen(port, () => console.log(`Express is now listening on port ${port}`));

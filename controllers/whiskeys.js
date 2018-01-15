@@ -4,6 +4,7 @@ const Whiskey = require('../models/whiskey');
 function whiskeysIndex(req,res) {
   Whiskey
     .find(req.query)
+    .populate('createdBy')
     .exec()
     .then((whiskeys) => {
       res.render('whiskeys/index', {whiskeys});
@@ -20,6 +21,7 @@ function whiskeysNew(req, res) {
 function whiskeysShow(req,res) {
   Whiskey
     .findById(req.params.id)
+    .populate('createdBy')
     .exec()
     .then((whiskey) => {
       if(!whiskey) return res.status(404).end();

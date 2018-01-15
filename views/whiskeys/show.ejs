@@ -8,9 +8,15 @@
 <p>Price: £<%= whiskey.price %></p>
 <p>Created By: <%= whiskey.createdBy.username %></p>
 
+<% if (locals.isLoggedIn) { %>
 <a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a>
 
 <form action="/whiskeys/<%= whiskey.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <button>Delete</button>
 </form>
+<% } else { %>
+
+<p><em>Like what you see? Be part of a community and add Whiskeys for others on LuvWhiskey</em><a href="/register"><strong> Register Here</strong></a></p>
+
+<% } %>

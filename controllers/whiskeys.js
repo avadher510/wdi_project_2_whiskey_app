@@ -21,7 +21,7 @@ function whiskeysNew(req, res) {
 function whiskeysShow(req,res) {
   Whiskey
     .findById(req.params.id)
-    .populate('createdBy')
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((whiskey) => {
       if(!whiskey) return res.status(404).end();
@@ -96,6 +96,42 @@ function whiskeysDelete(req, res) {
     });
 }
 
+function createComment(req,res,next) {
+  req.body.createdBy = req.user;
+  console.log(`${req.user} in whiskeys controller`);
+
+  Whiskey
+    .findById(req.params.id)
+    .exec()
+    .then((whiskey) => {
+      if(!whiskey) res.notFound();
+
+      whiskey.comments.push(req.body);
+      return whiskey.save();
+    })
+    .then((whiskey) => {
+      res.redirect(`/whiskeys/${whiskey.id}`);
+    })
+    .catch(next);
+}
+
+function deleteComment(req,res,next) {
+  Whiskey
+    .findById(req.params.id)
+    .exec()
+    .then((whiskey) => {
+      if(!whiskey) return res.notFound();
+
+      const comment = whiskey.comments.id(req.params.commentId);
+      comment.remove();
+      return whiskey.save();
+    })
+    .then((whiskey) => {
+      res.redirect(`/whiskeys/${whiskey.id}`);
+    })
+    .catch(next);
+}
+
 module.exports = {
   index: whiskeysIndex,
   new: whiskeysNew,
@@ -103,5 +139,7 @@ module.exports = {
   create: whiskeysCreate,
   edit: whiskeysEdit,
   update: whiskeysUpdate,
-  delete: whiskeysDelete
+  delete: whiskeysDelete,
+  createComment: createComment,
+  deleteComment: deleteComment
 };

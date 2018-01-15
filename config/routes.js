@@ -43,6 +43,12 @@ router.route('/whiskeys/:id')
   .put(secureRoute, whiskeys.update)
   .delete(secureRoute, whiskeys.delete);
 
+router.route('/whiskeys/:id/comments')
+  .post(whiskeys.createComment);
+
+router.route('/whiskeys/:id/comments/:commentId')
+  .delete(secureRoute, whiskeys.deleteComment);
+
 //Edit
 router.route('/whiskeys/:id/edit')
   .get(secureRoute, whiskeys.edit);

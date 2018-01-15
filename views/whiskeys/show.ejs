@@ -20,3 +20,27 @@
 <p><em>Like what you see? Be part of a community and add Whiskeys for others on LuvWhiskey</em><a href="/register"><strong> Register Here</strong></a></p>
 
 <% } %>
+
+<% whiskey.comments.forEach((comment) => { %>
+  <p><%= comment.content %></p>
+  <small><%= comment.createdBy.username %></small>
+
+  <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+    <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments/<%= comment.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete</button>
+    </form>
+  <% } %>
+<% }) %>
+
+<% if(locals.isLoggedIn) { %>
+<section>
+  <h4>Leave a comment</h4>
+  <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments">
+    <textarea name="content" id="content" placeholder="Comment"></textarea>
+    <button class="button">Leave a comment</button>
+    <% } else { %>
+      <p><a href="/register">Register</a> or <a href="/login">Login to comment</a></p>
+    <% } %>
+  </form>
+</section>

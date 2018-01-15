@@ -32,6 +32,15 @@ button {
 
 .container {
   .row {
+    h2 {
+      a {
+        text-decoration: none;
+        color: #D98302;
+        &:hover {
+          color: #FFC965
+        }
+      }
+    }
     h4 {
       a {
         color: #707070;

@@ -1,11 +1,17 @@
-<div class='container'>
-  <div class='row'>
-    <% whiskeys.forEach((whiskey) => { %>
-      <div class='col-lg-4 col-sm-6'>
-      <h4><a href='/whiskeys/<%= whiskey.id %>'><%= whiskey.brand %> <%= whiskey.variant %></a></h4>
-      <h5><%= whiskey.type %></h5>
-      <img src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>" class="btl-img">
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="card-deck">
+      <% whiskeys.forEach((whiskey) => { %>
+        <div class="col-md-4 col-sm-6">
+          <div class="card">
+            <img class="card-img-top" src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= whiskey.brand %> <%= whiskey.variant %></h5>
+            <a href="/whiskeys/<%= whiskey.id %>" class="btn btn-primary">See More Detail</a>
+          </div>
+        </div>
+        </div>
       <% }) %>
     </div>
   </div>
+</div>

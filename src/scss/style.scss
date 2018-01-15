@@ -30,3 +30,37 @@ body {
     }
   }
 }
+
+footer {
+  .container {
+    background-color: rgb(57,61,65);
+    color: white;
+    margin-top: 30px;
+    margin-botton: 3px;
+    width: 100vw;
+    padding-top: 1%;
+    .row {
+      .footer-left {
+          a {
+            color: #fff;
+          }
+          p {
+            color: #707070;
+          }
+      }
+      .footer-right {
+        ul {
+          li {
+              text-decoration: none;
+              display: inline;
+              margin: 10px 15px;
+              font-size: 20px;
+              a {
+                color: rgb(147,155,158);
+              }
+          }
+        }
+      }
+    }
+  }
+}

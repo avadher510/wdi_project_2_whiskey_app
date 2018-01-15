@@ -9,7 +9,8 @@ const whiskeySchema = new mongoose.Schema({
   age: {type: Number},
   notes: {type: Array},
   abv: {type: Number},
-  price: {type: Number}
+  price: {type: Number},
+  createdBy: {type: mongoose.schema.ObjectId, ref: 'User', required: true}
 });
 
 module.exports = mongoose.model('Whiskey', whiskeySchema);

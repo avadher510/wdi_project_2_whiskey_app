@@ -4,12 +4,27 @@
     <input type="text" class="form-control" id="image" placeholder="e.g. https://img.name ofwebsite.com/000/imagename.jpg" name="image">
   </div>
   <div class="form-group">
-    <label for="origin">Origin</label>
-    <input type="text" class="form-control" id="origin" placeholder="e.g. Scotland, America, Japan etc." name="origin">
+    <label for="origin">Origin of Whiskey</label>
+    <select class="form-control" id="origin" name="origin">
+      <option>America</option>
+      <option>Canada</option>
+      <option>India</option>
+      <option>Japan</option>
+      <option>Scotland</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="type">Type of Whiskey</label>
-    <input type="text" class="form-control" id="type" placeholder="Single Malt Scotch Whiskey, Tennessee Whiskey etc." name="type">
+    <select class="form-control" id="type" name="type">
+      <option>Single Malt Whiskey</option>
+      <option>Grain Whiskey</option>
+      <option>Blended Whiskey</option>
+      <option>Single Pot Still Whiskey</option>
+      <option>Bourbon</option>
+      <option>Tennessee Whiskey</option>
+      <option>Rye Whiskey</option>
+      <option>Corn Whiskey</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="brand">Brand of Whiskey</label>
@@ -29,7 +44,7 @@
   </div>
   <div class="form-group">
     <label for="price">Price per Bottle</label>
-    <input type="number" class="form-control" id="price" placeholder="price e.g 60.55" name="price">
+    <input type="number" class="form-control" id="price" placeholder="price to nearest £ e.g 60.55 = £61" name="price">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

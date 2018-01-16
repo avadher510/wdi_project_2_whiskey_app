@@ -2,11 +2,11 @@
 <h2><%= whiskey.variant %></h2>
 <h3><%= whiskey.type %></h3>
 <img src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>" class="btl-img">
-<p>This Whiskey originates from <%= whiskey.origin %> and the flavours you will experience are <%= whiskey.notes %></p>
-<p>Age: <%= whiskey.age %> years old</p>
-<p>ABV: <%= whiskey.abv %>%</p>
-<p>Price: £<%= whiskey.price %></p>
-<p>Created By: <%= whiskey.createdBy.username %></p>
+<p>This Whiskey originates from <%= whiskey.origin %> and the flavours you will experience are <%= whiskey.notes %>.</p>
+<p><span class="show-whiskey-info">Age:</span> <%= whiskey.age %> years old</p>
+<p><span class="show-whiskey-info">ABV:</span> <%= whiskey.abv %>%</p>
+<p><span class="show-whiskey-info">Price:</span> £<%= whiskey.price %></p>
+<p><span class="show-whiskey-info">Created By:</span> <%= whiskey.createdBy.username %></p>
 
 <% if (locals.isLoggedIn) { %>
 <button type="submit" value="Edit" class="btn btn-primary edit-btn"><a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a></button>

@@ -28,7 +28,7 @@ User
         brand: 'Glenmorangie',
         variant: 'Pride 1974',
         age: 42,
-        notes: ['Apple', 'Orange', 'Honey', 'Toffee', 'Clove'],
+        notes: ['Apple', ' Orange', ' Honey', ' Toffee', ' Clove'],
         abv: 52,
         price: 7000,
         createdBy: users[0]
@@ -39,7 +39,7 @@ User
         brand: 'Dalmore',
         variant: '40 year old',
         age: 40,
-        notes: ['Gingerbread', 'Maple Syrup', 'Honey', 'Brioche'],
+        notes: ['Gingerbread', ' Maple Syrup', ' Honey', ' Brioche'],
         abv: 42,
         price: 6250,
         createdBy: users[0]
@@ -50,7 +50,7 @@ User
         brand: 'Amrut',
         variant: 'Naarangi',
         age: 6,
-        notes: ['orange'],
+        notes: ['Orange'],
         abv: 50,
         price: 99,
         createdBy: users[0]
@@ -61,7 +61,7 @@ User
         brand: 'Makers Mark',
         variant: '46',
         age: 6,
-        notes: ['Spice', 'Caramel', 'Sweetness', 'Vanilla'],
+        notes: ['Spice', ' Caramel', ' Sweetness', ' Vanilla'],
         abv: 47,
         price: 40,
         createdBy: users[0]
@@ -72,7 +72,7 @@ User
         brand: 'Crown Royal',
         variant: 'Canadian Whiskey',
         age: 0,
-        notes: ['Vanilla', 'Fruit', 'Oak'],
+        notes: ['Vanilla', ' Fruit', ' Oak'],
         abv: 40,
         price: 25,
         createdBy: users[0]

@@ -1,7 +1,9 @@
 @import "variables";
 
 body {
-  font-family: 'Kavivanar', cursive;
+  // font-family: 'Kavivanar', cursive;
+  // font-family: 'Poiret One', cursive;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
 }
 
@@ -51,7 +53,7 @@ p {
     }
     h4 {
       a {
-        color: #707070;
+        color: $tertiary-color;
         text-decoration: none;
         &:hover {
           color: $secondary-color;
@@ -85,7 +87,7 @@ footer {
             }
           }
           p {
-            color: #707070;
+            color: $tertiary-color;
           }
       }
       .footer-right {
@@ -97,7 +99,7 @@ footer {
               margin: 10px 15px;
               font-size: 15px;
               a {
-                color: #707070;
+                color: $tertiary-color;
                 &:hover{
                   color: $secondary-color;
                   text-decoration: none;
@@ -117,8 +119,8 @@ footer {
       width: 50vw;
       margin: 0 auto;
       .individ-comment {
-        border-bottom: 1px solid #707070;
-        border-top: 1px solid #707070;
+        border-bottom: 1px solid $tertiary-color;
+        border-top: 1px solid $tertiary-color;
         margin: 0;
         small {
           font-style: italic;

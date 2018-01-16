@@ -46,6 +46,12 @@ p {
       .card {
         margin-bottom: 10px;
       }
+      .card-body {
+        h5 {
+          height: 50px;
+          margin-bottom: 50px;
+        }
+      }
     }
   }
 }

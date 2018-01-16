@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Whiskey = require('../models/whiskey');
 
 function newRoute(req, res) {
   res.render('sessions/new');
@@ -27,7 +28,17 @@ function deleteRoute(req, res) {
 }
 
 function showRoute(req, res) {
-  res.render('sessions/profile');
+  Whiskey
+    .find(req.params.id)
+    .populate('createdBy whiskeys.createdBy')
+    .exec()
+    .then((whiskeys) => {
+      if(!whiskeys) return res.status(404).end();
+      res.render('sessions/profile', {whiskeys});
+    })
+    .catch((err) =>{
+      res.status(500).render('error', { err });
+    });
 }
 
 module.exports = {

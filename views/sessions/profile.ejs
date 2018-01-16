@@ -2,9 +2,23 @@
   <div class="row">
     <div class="col-md-6 profile-box">
       <p class="username">Welcome, <%= user.username %>.</p>
+      <p class="mycomments">My Recent Whiskeys: </p>
+      <% whiskeys.forEach((whiskey) => { %>
+        <% if (locals.isLoggedIn && whiskey.belongsTo(user)) { %>
+          <div class="col-md-4 col-sm-6">
+            <div class="card">
+              <img class="card-img-top" src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= whiskey.brand %> <%= whiskey.variant %></h5>
+              <a href="/whiskeys/<%= whiskey.id %>" class="btn btn-primary">See More Detail</a>
+            </div>
+            </div>
+          </div>
+        <% }}) %>
     </div>
 
     <div class="col-md-6 profile-whiskey">
+
 
     </div>
   </div>

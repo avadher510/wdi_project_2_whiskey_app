@@ -53,4 +53,7 @@ router.route('/whiskeys/:id/comments/:commentId')
 router.route('/whiskeys/:id/edit')
   .get(secureRoute, whiskeys.edit);
 
+router.route('/profile')
+  .get(secureRoute, sessions.show);
+
 module.exports = router;

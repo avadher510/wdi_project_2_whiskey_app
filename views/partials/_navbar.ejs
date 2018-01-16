@@ -41,6 +41,11 @@
           <% } %>
         </ul>
         <form class="form-inline my-2 my-lg-0">
+          <% if (locals.isLoggedIn) { %>
+          <a href="/profile">
+            <img src="/assets/ic_account_circle_black_24px.svg" alt="profile icon" class="profile-img">
+          </a>
+          <% } %>
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
         </form>

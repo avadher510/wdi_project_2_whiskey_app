@@ -26,8 +26,13 @@ function deleteRoute(req, res) {
   return req.session.regenerate(() => res.redirect('/'));
 }
 
+function showRoute(req, res) {
+  res.render('sessions/profile');
+}
+
 module.exports = {
   new: newRoute,
   create: createRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  show: showRoute
 };

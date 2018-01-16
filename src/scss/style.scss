@@ -26,6 +26,8 @@ button {
   }
 }
 
+
+
 .delete-btn {
   margin-bottom: 30px;
 }
@@ -38,11 +40,23 @@ p {
   }
 }
 
+form {
+  a {
+    img {
+      &.profile-img {
+        margin-right: 5px;
+        height: 30px;
+      }
+    }
+  }
+}
+
 .container {
   .row {
     .col-md-6 {
       h3 {
         margin-top: 5px;
+        font-size: 20px;
       }
     }
     h2 {

@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 profile-box">
+    <div class="col-sm-6 profile-box">
       <p class="username">Welcome, <%= user.username %>.</p>
       <p class="mycomments">My Recent Whiskeys: </p>
       <% whiskeys.forEach((whiskey) => { %>
         <% if (locals.isLoggedIn && whiskey.belongsTo(user)) { %>
-          <div class="col-md-4 col-sm-6">
+          <div class="col">
             <div class="card">
               <img class="card-img-top" src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>">
             <div class="card-body">
@@ -17,8 +17,18 @@
         <% }}) %>
     </div>
 
-    <div class="col-md-6 profile-whiskey">
+    <div class="col-sm-6 profile-whiskey">
+      <h2>Recommended for You</h2>
+      <div class="card">
+        <img class="card-img-top" src="https://img.thewhiskyexchange.com/900/india_amr25.jpg" alt="amrut naarangi">
+      <div class="card-body">
+        <h5 class="card-title">Amrut Naarangi</h5>
+        <a href="/whiskeys/5a5df3ece7af43d37a7fd488 %>" class="btn btn-primary">See More Detail</a>
+      </div>
+      </div>
 
+
+      </div>
 
     </div>
   </div>

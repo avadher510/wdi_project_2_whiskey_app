@@ -40,10 +40,15 @@ p {
   }
 }
 
-.card{
-  max-height: 490px;
+.container {
+  .row {
+    .card-deck{
+      .card {
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
-
 
 form {
   a {

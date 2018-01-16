@@ -21,26 +21,40 @@
 
 <% } %>
 
-<% whiskey.comments.forEach((comment) => { %>
-  <p><%= comment.content %></p>
-  <small><%= comment.createdBy.username %></small>
 
-  <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
-    <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments/<%= comment.id %>">
-      <input type="hidden" name="_method" value="DELETE">
-      <button>Delete</button>
-    </form>
-  <% } %>
-<% }) %>
 
-<% if(locals.isLoggedIn) { %>
-<section class="comment-form">
-  <h4>Leave a comment</h4>
-  <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments">
-    <textarea name="content" id="content" placeholder="Comment"></textarea>
-    <button type="submit" class="btn btn-primary">Leave a comment</button>
-    <% } else { %>
-      <p><a href="/register">Register</a> or <a href="/login">Login to comment</a></p>
-    <% } %>
-  </form>
-</section>
+      <% whiskey.comments.forEach((comment) => { %>
+
+        <p><%= comment.content %></p>
+        <small><%= comment.createdBy.username %></small>
+
+        <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+          <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments/<%= comment.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button>Delete</button>
+          </form>
+        <% } %>
+      <% }) %>
+
+      <% if(locals.isLoggedIn) { %>
+
+          <section class="comment-form">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <h4>Leave a comment</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments">
+                    <textarea name="content" id="content" placeholder="Comment Here"></textarea>
+                    <button type="submit" class="btn btn-primary">Leave a comment</button>
+                  </form>
+                </div>
+              </div>
+      <% } else { %>
+              <p><a href="/register">Register</a> or <a href="/login">Login to comment</a></p>
+            </div>
+          </section>
+      <% } %>

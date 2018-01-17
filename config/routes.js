@@ -56,6 +56,4 @@ router.route('/whiskeys/:id/edit')
 router.route('/profile')
   .get(secureRoute, sessions.show);
 
-router.all('*', (req, res) => res.notFound());
-
 module.exports = router;

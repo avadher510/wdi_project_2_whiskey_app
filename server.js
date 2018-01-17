@@ -12,6 +12,8 @@ const User = require('./models/user');
 const flash = require('express-flash');
 const { port, env, dbURI, secret } = require('./config/environment');
 const app = express();
+const customResponses = require('./lib/customResponses');
+const errorHandler = require('./lib/errorHandler');
 
 mongoose.connect(dbURI);
 
@@ -59,7 +61,12 @@ app.use((req, res, next) => {
     });
 });
 
+app.use(customResponses);
 app.use(authentication);
 app.use(routes);
+
+app.use(errorHandler);
+
+
 
 app.listen(port, () => console.log(`Express is now listening on port ${port}`));

@@ -1,5 +1,16 @@
 @import "variables";
 
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   text-align: center;
@@ -55,10 +66,11 @@ p {
     }
     .profile-whiskey{
       .card-deck {
+        background-color: $secondary-color;
         .card {
           .profile-rec {
-            height: 400px;
-            width: 300px;
+            height: 300px;
+            width: 220px;
             margin: 0 auto;
             .card-body {
               h5 {

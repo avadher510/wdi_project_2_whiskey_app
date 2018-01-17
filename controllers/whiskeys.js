@@ -2,6 +2,11 @@ const Whiskey = require('../models/whiskey');
 
 //INDEX
 function whiskeysIndex(req,res) {
+  if(req.query.brand) {
+    req.query = { brand: new RegExp(req.query.brand, 'i')};
+  }
+
+  // { brand: new RegExp(req.query.brand, 'i')} || {variant: new RegExp(req.query.variant, 'i' )}; // capital insensitive
   Whiskey
     .find(req.query)
     .populate('createdBy')
@@ -18,18 +23,16 @@ function whiskeysNew(req, res) {
   res.render('whiskeys/new');
 }
 
-function whiskeysShow(req,res) {
+function whiskeysShow(req,res,next) {
   Whiskey
     .findById(req.params.id)
     .populate('createdBy comments.createdBy')
     .exec()
     .then((whiskey) => {
-      if(!whiskey) return res.status(404).end();
+      if(!whiskey) res.notFound();
       res.render('whiskeys/show', {whiskey});
     })
-    .catch((err) =>{
-      res.status(500).render('error', { err });
-    });
+    .catch(next);
 }
 
 function whiskeysCreate (req, res) {

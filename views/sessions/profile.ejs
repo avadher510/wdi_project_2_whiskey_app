@@ -1,35 +1,36 @@
 <div class="container">
   <div class="row">
-    <div class="card-deck">
-      <div class="col-sm-6 profile-box">
-        <p class="username">Welcome, <%= user.username %>.</p>
-        <p class="mycomments">My Recent Whiskeys: </p>
+
+
+      <div class="col-md-6 profile-box">
+        <h2 class="username">Welcome, <strong><%= user.username %></strong>.</h2>
+        <h3 class="mycomments">My Recently Added Whiskeys: </h3>
         <% whiskeys.forEach((whiskey) => { %>
           <% if (locals.isLoggedIn && whiskey.belongsTo(user)) { %>
-            <div class="col">
-              <div class="card">
-                <img class="card-img-top" src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>">
-              <div class="card-body">
-                <h5 class="card-title"><%= whiskey.brand %> <%= whiskey.variant %></h5>
-                <a href="/whiskeys/<%= whiskey.id %>" class="btn btn-primary">See More Detail</a>
+            <div class="card-deck">
+            <div class="col-md-8 offset-md-2">
+              <div class="card profile-card">
+                <div class="card-body">
+                  <h5 class="card-title"><strong><%= whiskey.brand %> <%= whiskey.variant %></strong></h5>
+                  <p class="card-text"><a href="/whiskeys/<%= whiskey.id %>" class="btn btn-secondary btn-block">See More</a></p>
+                </div>
               </div>
-              </div>
+            </div>
             </div>
           <% }}) %>
       </div>
 
-      <div class="col-sm-6 profile-whiskey">
+      <div class="col-md-6 profile-whiskey">
         <h2>Recommended for You</h2>
+        <div class="card-deck">
         <div class="card">
-          <img class="card-img-top" src="https://img.thewhiskyexchange.com/900/india_amr25.jpg" alt="amrut naarangi">
-        <div class="card-body">
-          <h5 class="card-title">Amrut Naarangi</h5>
-          <a href="/whiskeys/5a5df3ece7af43d37a7fd488 %>" class="btn btn-primary">See More Detail</a>
-        </div>
+          <img class="card-img-top profile-rec" src="https://img.thewhiskyexchange.com/900/india_amr25.jpg" alt="amrut naarangi">
+          <div class="card-body">
+            <h5 class="card-title">Amrut Naarangi</h5>
+            <a href="/whiskeys/5a5df3ece7af43d37a7fd488 %>" class="btn btn-secondary">See More</a>
+          </div>
         </div>
 
-
-        </div>
       </div>
     </div>
   </div>

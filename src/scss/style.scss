@@ -42,15 +42,32 @@ p {
 
 .container {
   .row {
-    .card-deck{
-      .card {
-        margin-bottom: 10px;
-        padding: 2px;
+    .profile-box {
+      .card-deck {
+        .card {
+          margin-bottom: 10px;
+          padding: 2px;
+          &.profile-card {
+            min-width: 200px;
+          }
+        }
       }
-      .card-body {
-        h5 {
-          height: 50px;
-          margin-bottom: 50px;
+    }
+    .profile-whiskey{
+      .card-deck {
+        .card {
+          .profile-rec {
+            height: 400px;
+            width: 300px;
+            margin: 0 auto;
+            .card-body {
+              h5 {
+                height: 50px;
+                margin-bottom: 50px;
+              }
+            }
+
+          }
         }
       }
     }

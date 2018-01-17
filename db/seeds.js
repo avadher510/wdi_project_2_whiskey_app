@@ -22,6 +22,28 @@ User
     console.log(`${users.length} user/s created`);
     return Whiskey
       .create([{
+        image: 'https://img.thewhiskyexchange.com/900/gfcob.1953.jpg',
+        origin: 'Scotland',
+        type: 'Single Malt Whiskey',
+        brand: 'Glenfarclas',
+        variant: '1953 Queens Coronation Decanter',
+        age: 58,
+        notes: ['Sweetness', ' Buttery', ' Orange', ' Spices'],
+        abv: 51,
+        price: 7500,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/grain_llm1995.jpg',
+        origin: 'Scotland',
+        type: 'Grain Whiskey',
+        brand: 'Loch Lomond',
+        variant: 'Old Particular ',
+        age: 21,
+        notes: ['Sweetness', ' Buttery', ' Orange', ' Spices'],
+        abv: 52,
+        price: 67,
+        createdBy: users[0]
+      },{
         image: 'https://img.thewhiskyexchange.com/900/gmgob.1974v8.jpg',
         origin: 'Scotland',
         type: 'Single Malt Scotch Whiskey',
@@ -66,15 +88,15 @@ User
         price: 40,
         createdBy: users[0]
       },{
-        image: 'https://img.thewhiskyexchange.com/900/brbon_cro7.jpg',
-        origin: 'Canada',
-        type: 'Blended Canadian Whiskey',
-        brand: 'Crown Royal',
-        variant: 'Canadian Whiskey',
-        age: 0,
-        notes: ['Vanilla', ' Fruit', ' Oak'],
-        abv: 40,
-        price: 25,
+        image: 'https://img.thewhiskyexchange.com/900/brbon_bul9.jpg',
+        origin: 'America',
+        type: 'Bourbon',
+        brand: 'Bulleit',
+        variant: 'Frontier Whiskey',
+        age: 10,
+        notes: ['Vanilla', ' Cinnamon', ' Dried Fruit'],
+        abv: 46,
+        price: 43,
         createdBy: users[0]
       },{
         image: 'https://img.thewhiskyexchange.com/900/brbon_jac124.jpg',
@@ -85,6 +107,17 @@ User
         notes: ['Honey', 'Apple', 'Oak', 'Butterscotch', 'Caramel', 'Orange', 'Vanilla'],
         abv: 45,
         price: 135,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/brbon_cro7.jpg',
+        origin: 'Canada',
+        type: 'Blended Canadian Whiskey',
+        brand: 'Crown Royal',
+        variant: 'Canadian Whiskey',
+        age: 0,
+        notes: ['Vanilla', ' Fruit', ' Oak'],
+        abv: 40,
+        price: 25,
         createdBy: users[0]
       }]);
   })

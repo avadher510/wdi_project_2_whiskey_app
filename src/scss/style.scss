@@ -37,7 +37,27 @@ button {
   }
 }
 
-
+//Show all whiskeys
+.container {
+  .row {
+    .card-deck {
+      .card {
+        height: calc(100% - 10px);
+        margin-bottom: 10px;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          h5 {
+            font-size: 15px;
+          }
+          a {
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+}
 
 .delete-btn {
   margin-bottom: 30px;
@@ -51,6 +71,8 @@ p {
   }
 }
 
+
+//PROFILE
 .container {
   .row {
     .profile-box {
@@ -97,6 +119,7 @@ form {
   }
 }
 
+//Index page
 .container {
   .row {
     .col-md-6 {
@@ -126,11 +149,12 @@ form {
   }
 }
 
+//FOOTER
 footer {
   .footer-override {
     background-color: rgb(57,61,65);
     position: relative;
-    height: 80px;
+    height: 100px;
     top: 20px;
     right: 0;
     bottom: 0;
@@ -176,6 +200,7 @@ footer {
   }
 }
 
+//Comments Section
 .comment-block {
   .row {
     .posted-comments {

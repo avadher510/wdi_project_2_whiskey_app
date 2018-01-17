@@ -35,7 +35,6 @@ function whiskeysShow(req,res,next) {
 }
 
 function whiskeysCreate (req, res) {
-  console.log(req.body);
 
   req.body.createdBy = req.user;
 

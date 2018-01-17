@@ -6,7 +6,6 @@ function whiskeysIndex(req,res) {
     req.query = { brand: new RegExp(req.query.brand, 'i')};
   }
 
-  // { brand: new RegExp(req.query.brand, 'i')} || {variant: new RegExp(req.query.variant, 'i' )}; // capital insensitive
   Whiskey
     .find(req.query)
     .populate('createdBy')

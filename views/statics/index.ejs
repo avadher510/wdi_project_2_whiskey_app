@@ -1,20 +1,33 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <h1>Welcome to LuvWhiskey</h1>
-      <h2><a href="/whiskeys">Click here to enter an Amber world</a></h2>
-      <p>LuvWhiskey is a user-based app for Whiskey lovers to create a shared database full of Whiskeys, where to find them and lots of other information including the way they taste! Join the Community!</p>
-    </div>
-    <div class="col-md-6">
-      <%- include ../partials/_login %>
-        <h3>Or</h3>
-        <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <form action="/register">
-              <button type="submit" value="Register" class="btn btn-success btn-block">Register Here</button>
-            </form>
+
+      <% if (locals.isLoggedIn) { %>
+      <div class="col-md-6 offset-md-3">
+        <h1>Welcome to LuvWhiskey</h1>
+        <h2><a href="/whiskeys">Click here to enter an Amber world</a></h2>
+        <p>LuvWhiskey is a user-based app for Whiskey lovers to create a shared database full of Whiskeys, where to find them and lots of other information including the way they taste! Join the Community!</p>
+      </div>
+      <% }else{ %>
+      <div class="col-md-6">
+        <h1>Welcome to LuvWhiskey</h1>
+        <h2><a href="/whiskeys">Click here to enter an Amber world</a></h2>
+        <p>LuvWhiskey is a user-based app for Whiskey lovers to create a shared database full of Whiskeys, where to find them and lots of other information including the way they taste! Join the Community!</p>
+      </div>
+      <% } %>
+
+
+      <% if (!locals.isLoggedIn) { %>
+      <div class="col-md-6">
+        <%- include ../partials/_login %>
+          <h3>Or</h3>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <form action="/register">
+                <button type="submit" value="Register" class="btn btn-success btn-block">Register Here</button>
+              </form>
+            </div>
           </div>
-        </div>
-    </div>
+      </div>
+      <% } %>
   </div>
 </div>

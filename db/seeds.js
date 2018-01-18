@@ -33,6 +33,72 @@ User
         price: 7500,
         createdBy: users[0]
       },{
+        image: 'https://img.thewhiskyexchange.com/900/brbon_whi14.jpg',
+        origin: 'Canada',
+        type: 'Rye Whiskey',
+        brand: 'Whistlepig',
+        variant: 'Farmstock Crop 001',
+        age: 0,
+        notes: ['Sweet', ' Spicy', ' Caramel', ' Cinnamon', ' Baking Spices'],
+        abv: 43,
+        price: 92,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/india_amr41.jpg',
+        origin: 'Indian',
+        type: 'Single Malt Whiskey',
+        brand: 'Amrut',
+        variant: 'Double Cask 3rd Edition',
+        age: 0,
+        notes: ['Chocolate', ' Tobacco', ' Raisins', ' Peach', ' Brown Sugar', ' Plum'],
+        abv: 46,
+        price: 165,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/irish_tee7.jpg',
+        origin: 'Ireland',
+        type: 'Single Malt Whiskey',
+        brand: 'Teeling',
+        variant: 'Single Malt Irish Whiskey',
+        age: 23,
+        notes: ['Vanilla', ' Clove', ' Lemon', ' Oak', ' Dried Fruit'],
+        abv: 46,
+        price: 47,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/japan_tog6.jpg',
+        origin: 'Japan',
+        type: 'Blended Whiskey',
+        brand: 'Togouchi',
+        variant: '15 Year Old',
+        age: 15,
+        notes: ['Nutty', ' Chocolatey', ' Spicy'],
+        abv: 44,
+        price: 185,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/balob.30yo.jpg',
+        origin: 'Scotland',
+        type: 'Single Malt Whiskey',
+        brand: 'Balvenie',
+        variant: '30 Year Old',
+        age: 30,
+        notes: ['Apple', ' Marzipan', ' Biscuits', ' Sultanas'],
+        abv: 47,
+        price: 699,
+        createdBy: users[0]
+      },{
+        image: 'https://img.thewhiskyexchange.com/900/lrgob.32yo.jpg',
+        origin: 'Scotland',
+        type: 'Single Malt Whiskey',
+        brand: 'Laphroaig',
+        variant: '32 Year Old',
+        age: 32,
+        notes: ['Black Pepper', ' Liquorice Root', ' Orange', ' Mango', ' Blackcurrant'],
+        abv: 47,
+        price: 1400,
+        createdBy: users[0]
+      },{
         image: 'https://img.thewhiskyexchange.com/900/grain_llm1995.jpg',
         origin: 'Scotland',
         type: 'Grain Whiskey',

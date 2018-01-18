@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-6 profile-box">
+    <div class="col-md-6 col-sm-12 profile-box">
       <h2 class="username">Welcome, <strong><%= user.username %></strong>.</h2>
       <h3 class="mycomments">My Recently Added Whiskeys: </h3>
       <% whiskeys.forEach((whiskey) => { %>
@@ -19,7 +19,7 @@
         <% }}) %>
     </div>
 
-    <div class="col-md-6 profile-whiskey">
+    <div class="col-md-6 col-sm-12 profile-whiskey">
       <h2>Whiskey of the Week</h2>
       <h3>This week we present: </h3>
       <div class="card-deck recommended">
@@ -33,15 +33,15 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 profile-fav">
+        <div class="col-12 profile-fav">
           <h2>My Favourites</h2>
           <% user.favourites.forEach((whiskey) => { %>
           <div class="card-deck">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-12">
               <div class="card profile-card">
                 <div class="card-body">
                   <h5 class="card-title"><strong><%= whiskey.brand %> <%= whiskey.variant %></strong></h5>
-                  <p class="card-text"><a href="/whiskeys/<%= whiskey.id %>" class="btn btn-secondary btn-block">See More</a></p>
+                  <p class="card-text"><a href="/whiskeys/<%= whiskey.id %>" class="btn btn-success btn-block">See More</a></p>
                 </div>
               </div>
             </div>

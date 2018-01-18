@@ -1,0 +1,47 @@
+.comment-block {
+  .row {
+    .posted-comments {
+      display: block;
+      width: 50vw;
+      margin: 0 auto;
+      .individ-comment {
+        border-bottom: 1px solid $tertiary-color;
+        border-top: 1px solid $tertiary-color;
+        margin: 0;
+        small {
+          font-style: italic;
+          font-weight: bold;
+          color: $secondary-color;
+        }
+        form {
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}
+section {
+  .container {
+    .row {
+      .col {
+        h4 {
+          font-size: 20px;
+          margin-top: 40px;
+        }
+        form {
+          textarea {
+            &#content {
+              display: block;
+              width: 50vw;
+              height: 100px;
+              margin: 0 auto;
+            }
+          }
+          button {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}

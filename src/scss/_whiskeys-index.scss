@@ -1,0 +1,24 @@
+//Show all whiskeys
+.container {
+  .row {
+    .card-deck {
+      .card {
+        height: calc(100% - 10px);
+        margin-bottom: 10px;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          h5 {
+            font-size: 15px;
+          }
+          h6 {
+            font-size: 12px;
+          }
+          p {
+            margin-top: auto;
+          }
+        }
+      }
+    }
+  }
+}

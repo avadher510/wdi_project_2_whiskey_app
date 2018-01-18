@@ -1,0 +1,46 @@
+//PROFILE
+.container {
+  .row {
+    .profile-box {
+      .card-deck {
+        .card {
+          margin-bottom: 10px;
+          padding: 2px;
+          &.profile-card {
+            min-width: 200px;
+          }
+        }
+      }
+    }
+    .profile-whiskey{
+      .card-deck {
+        background-color: $secondary-color;
+        .card {
+          .profile-rec {
+            height: 300px;
+            width: 220px;
+            margin: 0 auto;
+            .card-body {
+              h5 {
+                height: 50px;
+                margin-bottom: 50px;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+form {
+  a {
+    img {
+      &.profile-img {
+        margin-right: 5px;
+        height: 30px;
+      }
+    }
+  }
+}

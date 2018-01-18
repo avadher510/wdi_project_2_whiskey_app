@@ -1,0 +1,49 @@
+footer {
+  .footer-override {
+    background-color: rgb(57,61,65);
+    position: relative;
+    height: 100px;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #afafaf;
+    text-align: center;
+    .row {
+      .footer-left {
+          h4 {
+            padding-top: 10px;
+            a {
+              color: #fff;
+              text-decoration: none;
+              &:hover {
+                color: $secondary-color;
+              }
+            }
+          }
+          p {
+            color: $tertiary-color;
+          }
+      }
+      .footer-right {
+        ul {
+          padding-top: 10px;
+          li {
+              text-decoration: none;
+              display: inline;
+              margin: 10px 15px;
+              font-size: 15px;
+              a {
+                color: $tertiary-color;
+                &:hover{
+                  color: $secondary-color;
+                  text-decoration: none;
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+}

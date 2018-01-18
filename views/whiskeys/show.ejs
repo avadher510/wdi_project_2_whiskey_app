@@ -1,35 +1,46 @@
-<h1><%= whiskey.brand %></h1>
-<h2><%= whiskey.variant %></h2>
-<h3><%= whiskey.type %></h3>
-<img src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>" class="btl-img">
-<p>This Whiskey originates from <%= whiskey.origin %> and the flavours you will experience are <%= whiskey.notes %>.</p>
-<p><span class="show-whiskey-info">Age:</span> <%= whiskey.age %> years old</p>
-<p><span class="show-whiskey-info">ABV:</span> <%= whiskey.abv %>%</p>
-<p><span class="show-whiskey-info">Price:</span> £<%= whiskey.price %></p>
-<p><span class="show-whiskey-info">Created By:</span> <%= whiskey.createdBy.username %></p>
-
-<form method="POST" action="/users/<%= locals.user.id %>/favourite/<%= whiskey.id %>">
-  <input type="hidden" name="_method" value="PUT">
-  <button class="btn btn-primary btn-sm">Add to Favourites</button>
-</form>
-
-<% if (locals.isLoggedIn) { %>
-<button type="submit" value="Edit" class="btn btn-primary edit-btn"><a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a></button>
-
-<form action="/whiskeys/<%= whiskey.id %>" method="POST" class="delete-btn">
-  <input type="hidden" name="_method" value="DELETE">
-  <button type="submit" value="Delete" class="btn btn-primary">Delete</button>
-</form>
-<% } else { %>
-
-<p><em>Like what you see? Be part of a community and add Whiskeys for others on LuvWhiskey</em><a href="/register"><strong> - Register Here</strong></a></p>
-
-<% } %>
-
-
-<div class="container comment-block">
+<div class="container">
   <div class="row">
-    <div class="col-8 posted-comments">
+    <div class="col-md-6 offset-md-3 col-sm-12">
+      <div class="col-12">
+        <h1><%= whiskey.brand %></h1>
+        <h2><%= whiskey.variant %></h2>
+        <h3><%= whiskey.type %></h3>
+        <img src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>" class="btl-img">
+        <p>This Whiskey originates from <%= whiskey.origin %> and the flavours you will experience are <%= whiskey.notes %>.</p>
+        <p><span class="show-whiskey-info">Age:</span> <%= whiskey.age %> years old</p>
+        <p><span class="show-whiskey-info">ABV:</span> <%= whiskey.abv %>%</p>
+        <p><span class="show-whiskey-info">Price:</span> £<%= whiskey.price %></p>
+        <p><span class="show-whiskey-info">Created By:</span> <%= whiskey.createdBy.username %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <% if (locals.isLoggedIn) { %>
+        <form action="/users/<%= locals.user.id %>/favourite/<%= whiskey.id %>" method="POST">
+          <input type="hidden" name="_method" value="PUT">
+          <button type="submit" value="Delete" class="btn btn-success show-page add-fav-btn">Add to Favourites</button>
+        </form>
+
+        <a href="/whiskeys/<%= whiskey.id %>/edit"><button type="submit" value="Edit" class="btn btn-primary edit-btn show-page">Edit</button></a>
+
+      <form action="/whiskeys/<%= whiskey.id %>" method="POST" class="delete-btn">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" value="Delete" class="btn btn-info show-page">Delete</button>
+      </form>
+
+
+      <% } else { %>
+
+      <p><em>Like what you see? Be part of a community and add Whiskeys for others on LuvWhiskey</em><a href="/register"><strong> - Register Here</strong></a></p>
+
+      <% } %>
+    </div>
+  </div>
+
+  <div class="row comment-block">
+    <div class="col-8 offset-2 posted-comments">
       <% whiskey.comments.forEach((comment) => { %>
         <div class="individ-comment">
           <p><%= comment.content %></p>
@@ -42,29 +53,28 @@
           <% } %>
         </div>
       <% }) %>
+      <% if(locals.isLoggedIn) { %>
+
+      <section class="comment-form">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h4>Leave a comment</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments">
+                <textarea name="content" id="content" placeholder="Comment Here"></textarea>
+                <button type="submit" class="btn btn-primary">Leave a comment</button>
+              </form>
+            </div>
+          </div>
+      <% } else { %>
+          <p><a href="/register">Register</a> or <a href="/login">Login to comment</a></p>
+        </div>
+      </section>
+      <% } %>
     </div>
   </div>
 </div>
-
-<% if(locals.isLoggedIn) { %>
-
-<section class="comment-form">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h4>Leave a comment</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <form method="POST" action="/whiskeys/<%= whiskey.id %>/comments">
-          <textarea name="content" id="content" placeholder="Comment Here"></textarea>
-          <button type="submit" class="btn btn-primary">Leave a comment</button>
-        </form>
-      </div>
-    </div>
-<% } else { %>
-    <p><a href="/register">Register</a> or <a href="/login">Login to comment</a></p>
-  </div>
-</section>
-<% } %>

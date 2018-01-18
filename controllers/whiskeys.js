@@ -1,7 +1,6 @@
 const Whiskey = require('../models/whiskey');
 const User = require('../models/user');
 
-//INDEX
 function whiskeysIndex(req,res) {
   if(req.query.brand) {
     req.query = { brand: new RegExp(req.query.brand, 'i')};
@@ -151,7 +150,6 @@ function favouritesCreate(req,res,next) {
     })
     .catch(next);
 }
-
 
 module.exports = {
   index: whiskeysIndex,

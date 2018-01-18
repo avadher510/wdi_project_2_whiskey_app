@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const whiskeys = require('../controllers/whiskeys');
-// const statics = require('../controllers/statics');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 
@@ -22,7 +21,7 @@ router.route('/register')
   .post(registrations.create);
 
 router.route('/login')
-  .get(sessions.new) // Render the login form
+  .get(sessions.new)
   .post(sessions.create);
 
 router.route('/logout')

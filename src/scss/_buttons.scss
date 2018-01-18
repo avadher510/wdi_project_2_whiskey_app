@@ -2,7 +2,7 @@ button {
   &.edit-btn {
     margin-bottom: 10px;
     a {
-    color: #fff;
+    color: $head-color;
     }
   }
 }
@@ -12,24 +12,23 @@ button {
 }
 
 .btn {
-
     border: 0 none;
 }
 
 .btn-success {
-  background: #83C1FF;
+  background: $blue-btn;
 }
 
 .btn-primary {
-  background: #343A40;
+  background: $grey-btn;
 }
 
 .btn-info {
-  background: #343A40;
+  background: $grey-btn;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #343A40;
+    background: $grey-btn;
 }
 
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
@@ -37,5 +36,5 @@ button {
 }
 
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
-    background: #83C1FF;
+    background: $blue-btn;
 }

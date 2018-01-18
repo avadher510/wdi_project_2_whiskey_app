@@ -7,16 +7,4 @@
 @import "footer";
 @import "buttons";
 @import "whiskey-show";
-
-html, body {
-  height: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-}
-.content {
-  flex: 1 0 auto;
-}
+@import "body";

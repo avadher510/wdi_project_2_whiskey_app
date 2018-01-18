@@ -12,35 +12,35 @@ footer {
     text-align: center;
     .row {
       .footer-left {
-          h4 {
-            padding-top: 10px;
-            a {
-              color: #fff;
-              text-decoration: none;
-              &:hover {
-                color: $secondary-color;
-              }
+        h4 {
+          padding-top: 10px;
+          a {
+            color: $head-color;
+            text-decoration: none;
+            &:hover {
+              color: $secondary-color;
             }
           }
-          p {
-            color: $tertiary-color;
-          }
+        }
+        p {
+          color: $tertiary-color;
+        }
       }
       .footer-right {
         ul {
           padding-top: 10px;
           li {
-              text-decoration: none;
-              display: inline;
-              margin: 10px 15px;
-              font-size: 15px;
-              a {
-                color: $tertiary-color;
-                &:hover{
-                  color: $secondary-color;
-                  text-decoration: none;
-                }
+            text-decoration: none;
+            display: inline;
+            margin: 10px 15px;
+            font-size: 15px;
+            a {
+              color: $tertiary-color;
+              &:hover{
+                color: $secondary-color;
+                text-decoration: none;
               }
+            }
           }
         }
       }

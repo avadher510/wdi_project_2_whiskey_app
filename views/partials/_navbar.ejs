@@ -30,6 +30,10 @@
       <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>
       </li>
+      <li class="nav-item profile-logo">
+        <a class="nav-link" href="/profile"><img src="/assets/white_profile_logo.png" alt="profile icon" class="profile-img"></a>
+      </li>
+
       <% }else{ %>
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
@@ -39,11 +43,11 @@
       </li>
       <% } %>
     </ul>
-    
+
     <form class="form-inline my-2 my-lg-0" action="/whiskeys" method="GET">
       <% if (locals.isLoggedIn) { %>
       <a href="/profile">
-        <img src="/assets/white_profile_logo.png" alt="profile icon" class="profile-img">
+
       </a>
       <% } %>
       <input class="form-control mr-sm-2" type="search" placeholder="Search By Brand" aria-label="Search" name="brand">

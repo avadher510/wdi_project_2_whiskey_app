@@ -1,0 +1,17 @@
+nav {
+  div {
+    ul {
+      li {
+        &.profile-logo {
+
+          a {
+            img {
+              height: 24px;
+              width: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 const Whiskey = require('../models/whiskey');
+const User = require('../models/user');
 
 //INDEX
 function whiskeysIndex(req,res) {
@@ -99,7 +100,6 @@ function whiskeysDelete(req, res) {
 
 function createComment(req,res,next) {
   req.body.createdBy = req.user;
-  console.log(`${req.user} in whiskeys controller`);
 
   Whiskey
     .findById(req.params.id)
@@ -133,6 +133,26 @@ function deleteComment(req,res,next) {
     .catch(next);
 }
 
+function favouritesCreate(req,res,next) {
+  console.log(req.params.userId);
+  User
+    .findById(req.params.userId)
+    .exec()
+    .then((user) => {
+      console.log(user);
+      if(!user) res.notFound();
+
+      user.favourites.push(req.params.whiskeyId);
+
+      return user.save();
+    })
+    .then(() => {
+      res.redirect('/whiskeys');
+    })
+    .catch(next);
+}
+
+
 module.exports = {
   index: whiskeysIndex,
   new: whiskeysNew,
@@ -142,5 +162,6 @@ module.exports = {
   update: whiskeysUpdate,
   delete: whiskeysDelete,
   createComment: createComment,
-  deleteComment: deleteComment
+  deleteComment: deleteComment,
+  favouritesCreate: favouritesCreate
 };

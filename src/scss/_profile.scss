@@ -14,7 +14,9 @@
     }
     .profile-whiskey{
       .card-deck {
+        &.recommended {
         background-color: $secondary-color;
+        }
         .card {
           .profile-rec {
             height: 300px;
@@ -30,6 +32,9 @@
           }
         }
       }
+    }
+    .profile-fav {
+      margin-top: 20px;
     }
   }
 }

@@ -8,6 +8,11 @@
 <p><span class="show-whiskey-info">Price:</span> £<%= whiskey.price %></p>
 <p><span class="show-whiskey-info">Created By:</span> <%= whiskey.createdBy.username %></p>
 
+<form method="POST" action="/users/<%= locals.user.id %>/favourite/<%= whiskey.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <button class="btn btn-primary btn-sm">Add to Favourites</button>
+</form>
+
 <% if (locals.isLoggedIn) { %>
 <button type="submit" value="Edit" class="btn btn-primary edit-btn"><a href="/whiskeys/<%= whiskey.id %>/edit">Edit</a></button>
 

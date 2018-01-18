@@ -28,16 +28,19 @@ function deleteRoute(req, res) {
 }
 
 function showRoute(req, res) {
-  Whiskey
-    .find(req.params.id)
-    .populate('createdBy whiskeys.createdBy')
+  User
+    .findById(req.user.id)
+    .populate('favourites')
     .exec()
-    .then((whiskeys) => {
-      if(!whiskeys) return res.status(404).end();
-      res.render('sessions/profile', {whiskeys});
-    })
-    .catch((err) =>{
-      res.status(500).render('error', { err });
+    .then(user => {
+
+      Whiskey
+        .find({ createdBy: user.id })
+        .populate('createdBy whiskeys.createdBy')
+        .exec()
+        .then(whiskeys => {
+          res.render('sessions/profile', {user, whiskeys});
+        });
     });
 }
 

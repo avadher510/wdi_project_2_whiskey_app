@@ -46,7 +46,7 @@ User
       },{
         image: 'https://img.thewhiskyexchange.com/900/gmgob.1974v8.jpg',
         origin: 'Scotland',
-        type: 'Single Malt Scotch Whiskey',
+        type: 'Single Malt Whiskey',
         brand: 'Glenmorangie',
         variant: 'Pride 1974',
         age: 42,
@@ -57,7 +57,7 @@ User
       },{
         image: 'https://img.thewhiskyexchange.com/900/dlmob.40yov1.jpg',
         origin: 'Scotland',
-        type: 'Single Malt Scotch Whiskey',
+        type: 'Single Malt Whiskey',
         brand: 'Dalmore',
         variant: '40 year old',
         age: 40,
@@ -68,7 +68,7 @@ User
       },{
         image: 'https://img.thewhiskyexchange.com/900/india_amr25.jpg',
         origin: 'India',
-        type: 'Single Malt Indian Whiskey',
+        type: 'Single Malt Whiskey',
         brand: 'Amrut',
         variant: 'Naarangi',
         age: 6,
@@ -111,7 +111,7 @@ User
       },{
         image: 'https://img.thewhiskyexchange.com/900/brbon_cro7.jpg',
         origin: 'Canada',
-        type: 'Blended Canadian Whiskey',
+        type: 'Blended Whiskey',
         brand: 'Crown Royal',
         variant: 'Canadian Whiskey',
         age: 0,

@@ -22,12 +22,17 @@
         <button type="submit" value="Delete" class="btn btn-success show-page add-fav-btn">Add to Favourites</button>
       </form>
 
+      <% if(whiskey.belongsTo(user)) { %>
+
       <a href="/whiskeys/<%= whiskey.id %>/edit"><button type="submit" value="Edit" class="btn btn-primary edit-btn show-page">Edit</button></a>
 
       <form action="/whiskeys/<%= whiskey.id %>" method="POST" class="delete-btn">
       <input type="hidden" name="_method" value="DELETE">
       <button type="submit" value="Delete" class="btn btn-info show-page">Delete</button>
       </form>
+
+      <% } %>
+
       <% } else { %>
         <p><em>Like what you see? Be part of a community and add Whiskeys for others on LuvWhiskey</em><a href="/register"><strong> - Register Here</strong></a></p>
       <% } %>

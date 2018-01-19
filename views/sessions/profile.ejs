@@ -22,12 +22,16 @@
       <h3>This week we present: </h3>
       <div class="card-deck recommended">
         <div class="card">
-          <img class="card-img-top profile-rec" src="https://img.thewhiskyexchange.com/900/macob.non63.jpg" alt="macallan no6">
+          <% whiskeys.forEach((whiskey) => { %>
+          <% if(whiskey.brand === "Dalmore" && whiskey.variant === "40 year old" && whiskey.age === 40 && whiskey.price === 6250) { %>
+          <img class="card-img-top profile-rec" src="<%= whiskey.image %>" alt="<%= whiskey.brand %> <%= whiskey.variant %>">
+
           <div class="card-body">
-            <h5 class="card-title">Dalmore</h5>
-            <h6 class="card-title">40 Year Old</h6>
-            <a href="/whiskeys/5a60e3b153f63910070cb174 %>" class="btn btn-success">See More</a>
+            <h5 class="card-title"><%= whiskey.brand %></h5>
+            <h6 class="card-title"><%= whiskey.variant %></h6>
+            <a href="/whiskeys/<%= whiskey.id %>" class="btn btn-success">See More</a>
           </div>
+          <% }}) %>
         </div>
       </div>
       <div class="row">

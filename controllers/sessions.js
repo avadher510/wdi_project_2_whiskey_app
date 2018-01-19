@@ -35,8 +35,8 @@ function showRoute(req, res) {
     .then(user => {
 
       Whiskey
-        .find({ createdBy: user.id })
-        .populate('createdBy whiskeys.createdBy')
+        .find()
+        .populate('createdBy')
         .exec()
         .then(whiskeys => {
           res.render('sessions/profile', {user, whiskeys});

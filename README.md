@@ -43,7 +43,7 @@ Access online via these links:
 
 [GitHub](https://github.com/avadher510/wdi_project_2_whiskey_app)
 
-[HEROKU](https://pure-spire-30986.herokuapp.com/)
+[HEROKU](https://luvwhiskey.herokuapp.com/)
 
 ***OR***
 
